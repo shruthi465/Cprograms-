@@ -1,0 +1,245 @@
+1.//c program to find greatest among five numbers:
+#include<stdio.h>
+void main()
+{
+    // variable declaration 
+      int n1,n2,n3,n4,n5,max;
+      printf("Enter the values:");
+      scanf("%d%d%d%d%d",&n1,&n2,&n3,&n4,&n5);
+    // Largest among n1, n2, n3 ,n4 and n5 
+    max = (n1 > n2 && n1 > n3 && n1 > n4 && n1>n5) ?   n1 : ((n2 > n3 && n2 > n4 && n2>n5) ?  n2 : 
+ (n3 > n4 && n3>n5)? n3 : (n4>n5?n4:n5)); 
+      
+    // Print the largest number 
+    printf("Largest number among is %d:", max); 
+  
+
+}
+output:
+Enter the values:11 23 54 76 89
+Largest number among is  : 89
+........................................................................................................................................
+2.To find the sum of digits a positive integer number.
+#include<stdio.h>
+void main()
+{
+   int n,r,sum=0;
+   printf("Enter a number");
+   scanf("%d",&n);
+       while(n>0)
+       {
+       r=n%10;
+       sum=sum+r;
+       n=n/10;
+       }
+   
+   printf("%d",sum);
+}
+Output:
+Enter a number456
+15
+..........................................................................................................................................................
+3. To print “Hello” without using any semicolon (;) in the program. 
+
+#include<stdio.h>
+int main()
+{
+    if ( printf ("hello") )
+    return 0;
+}
+
+output:
+hello
+......................................................................................................................................
+
+4/*To check whether the given positive integer number is palindrome. Example palindrome numbers are 1991,2332, 121, etc. */
+
+#include<stdio.h>
+void main()
+{
+    int n,r,sum=0,temp;
+    printf("Enter the number:");
+    scanf("%d",&n);
+    temp=n;
+    while(n!=0)
+    {
+        r=n%10;
+        sum=sum*10+r;
+        n=n/10;
+    }
+ printf("the sum value is %d\n:",sum);
+    n=temp;
+    if(n==sum)
+    {
+        printf("palindrome");
+    }
+    else
+    {
+        printf("not palindrome");
+    }
+}
+
+output:
+Enter the number:123321
+the sum value is :123321
+palindrome
+...........................................................................................................................................................................
+5./*To check whether the given string (single word) is palindrome. 
+Examples of palindrome strings – “nitin”,“radar”, “ada”, etc.*/
+#include<stdio.h>
+#include<string.h>
+void main()
+{
+    char a[100];
+    int l,i,flag;
+    printf("Enter the string:\n");
+    scanf("%s",a);
+    l=strlen(a);
+   for(i=0;i<=l;i++)
+    {
+        if(a[0]!=a[l-i-1])
+        flag=1;
+        break;
+    }
+    if(!flag)
+    {
+        printf("palindrome");
+    }
+    else
+    {
+        printf("not palindrome");
+    }
+    
+}
+output:
+Enter the string:
+madam
+palindrome
+.................................................................................................................................................
+6./* program to find the largest digit in a number */ 
+#include<stdio.h>
+void main()
+{
+   int n,temp,r,ld=0;
+   printf("enter the digit:");
+   scanf("%d",&n);
+   temp=n;
+   while(temp>0)
+   {
+   r=temp%10;
+   if(r>ld)
+       ld=r;
+   temp=temp/10;
+   }
+   printf("the greatest digit is %d",ld);
+}
+output:
+enter the digit:798
+the greatest digit is 9
+............................................................................................................
+7. To find the smallest digit in a given positive integer number. 
+#include<stdio.h>
+void main()
+{
+   int n,temp,r,sd=9;
+   printf("enter the digit:");
+   scanf("%d",&n);
+   temp=n;
+   while(temp>0)
+   {
+   r=temp%10;
+   if(r<sd)
+       sd=r;
+   temp=temp/10;
+   }
+   printf("the smallest digit is %d",sd);
+}
+output:
+enter the digit:312
+the smallest digit is 1
+..............................................................................................................................................................
+8./*program to find the sum of digits of a number at odd places and even places separately*/ 
+#include <stdio.h>
+void main()
+{
+    int n,r,temp,sum=0,flag=1,even=0,odd=0;
+    printf("Enter the n value\n");
+    scanf("%d",&n);
+    temp=n;
+    while(temp>0)
+    {
+        r=temp%10;
+        if(flag)
+        {
+            odd=odd+r;
+            flag=0;
+        }
+        else
+        {
+                   even=even+r;
+            flag=1;
+        }
+       temp=temp/10; 
+    }
+    printf("\nthe sum of odd digits is: %d",odd);//if no.of digits are even then  index start from 0,odd-->starts from 1
+     printf("\nthe sum of even digits is: %d",even);
+    
+}
+
+output:
+Enter the n value
+9076589
+the sum of odd digits is: 30
+the sum of even digits is: 14
+.........................................................................................................................................................................................
+9.An Armstrong number is a three digit integer such that the sum of the cubes of its digits is equal to the number
+itself. For example, 371 is an Armstrong number since 3^3 + 7^3 + 1^3 = 371. Write a program to find
+whether a given 3-digit number is an Armstrong number or not. 
+
+#include<stdio.h>
+void main()
+{
+    int n=371,r,sum=0,temp;
+    temp=n;
+    while(n!=0)
+    {
+        r=n%10;
+        sum=sum+r*r*r;
+        n=n/10;
+    }
+    n=temp;
+ printf("the sum value is: %d\n",sum);
+ if (sum==n)
+ {
+     printf("it is armstrong number");
+ }
+   else
+   printf("not armstrong");
+}
+output:
+the sum value is: 371
+it is armstrong number
+.............................................................................................................................................. 
+10.program to print first armstrong number.
+
+#include <stdio.h>
+//#include <math.h>
+void main()
+{
+ int i, remainder, sum, n;
+ for ( i = 100;;i++ ) {
+ n = i;
+ sum = 0;
+ while ( n > 0 ){
+remainder = n % 10;
+ sum = sum*10 +remainder; 
+ n = n / 10;
+ }
+ if ( sum == i ) {
+ printf("\nFirst Armstrong number = %d\n",i);
+ return;
+ }
+ }
+} 
+output:
+First Armstrong number =101
