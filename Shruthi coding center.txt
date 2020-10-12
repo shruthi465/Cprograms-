@@ -243,3 +243,24 @@ remainder = n % 10;
 } 
 output:
 First Armstrong number =101
+...............................................................................
+11.
+#include <stdio.h>
+void main()
+{
+   int n,remainder,sum=0,product=1,temp,i;
+   printf("Enter the number");
+   scanf("%d",&n);
+  while(n>0)
+  {
+      remainder=i%10;
+      sum=sum+remainder;
+      product=product*remainder;
+      i=i/10;
+  }
+  temp=sum+product;
+  if(temp==i)
+  printf("%d",temp);
+  else
+  printf("It is not a special number");
+}
